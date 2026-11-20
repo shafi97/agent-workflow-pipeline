@@ -1,0 +1,21 @@
+{
+  "name": "agent-workflow-pipeline",
+  "version": "1.0.0",
+  "description": "Multi-agent build workflow with a secure CI pipeline",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "scan:secrets": "node scripts/secret-scan.mjs",
+    "audit": "npm audit --audit-level=high",
+    "check": "npm run typecheck && npm test && npm run scan:secrets && npm run audit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.1"
+  },
+  "type": "module"
+}
